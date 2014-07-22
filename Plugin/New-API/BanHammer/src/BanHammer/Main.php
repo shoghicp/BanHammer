@@ -24,7 +24,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
 	switch($cmd->getName()){
 	    case "banhammer":
 		if(!isset($args[0])){
-		    $sender->sendMessage("Usage: /banhammer <get|edit> [banip|ban|kick]");
+		    $sender->sendMessage("Usage: /banhammer <get|edit> [item|banip|ban|kick]");
 		    return true;
 		}else{
 		if($args[0] == "edit"){
