@@ -123,7 +123,7 @@ class Main extends PluginBase implements Listener, CommandExecutor{
     	    $player = $event->getDamager();
             if(($event->getEntity()) instanceof Player){
                 $target = $event->getEntity();
-    	        if($player->getInventory->getItemInHand()->getID() == $this->getConfig()->get("BanHammer")){
+    	        if($player->getInventory()->getItemInHand()->getID() == $this->getConfig()->get("BanHammer")){
     	            if($player->hasPermission("banhammer.use")){
     	                if($target->hasPermission("banhammer.use") or $target->hasPermission("banhammer.exempt")){
     	                    $sender->sendMessage("[BanHammer] You do not have permission to " . $this->getConfig()->get("BanType") . " that player!");
