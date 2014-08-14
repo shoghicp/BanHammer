@@ -98,10 +98,11 @@ class Main extends PluginBase implements Listener, CommandExecutor{
 			$sender->sendMessage("[BanHammer] You can only use this command in-game!");
 			return true;
 		    }else{
+		        $player = $sender->getServer()->getPlayer($sender->getName)());
 			if($sender->hasPermission("banhammer.use")){
 				$id = Item::fromString($this->getConfig()->get("BanHammer"));
 				$item = $id->setCount(1);
-				$sender->getInventory()->addItem(clone $item);
+				$player->getInventory()->addItem(clone $item);
 				$sender->sendMessage("[BanHammer] The BanHammer has been added to your inventory!");
 			        return true;
 			}else{
